@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/news/news",
+    "pages/myself/myself",
+    "pages/NoticInformation/NoticInformation",
+    "pages/OrderInformation/OrderInformation",
+    "pages/PickUpInformation/PickUpInformation",
+    "pages/WaitingPickUp/WaitingPickUp",
+    "pages/Finish/Finish",
+    "pages/Running/Running"
+
+  ],
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#30a5fd",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home-selected.png",
+        "selectedIconPath": "images/home.png"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "消息",
+        "iconPath": "images/news-end.png",
+        "selectedIconPath": "images/news.png"
+      },
+      {
+        "pagePath": "pages/myself/myself",
+        "text": "我的",
+        "iconPath": "images/myself-end.png",
+        "selectedIconPath": "images/myself.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#30a5fd",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black"
+  
+  },
+  "sitemapLocation": "sitemap.json"
+}

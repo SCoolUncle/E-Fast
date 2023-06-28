@@ -1,0 +1,36 @@
+<!--pages/myself/myself.wxml-->
+<view class='background_all'>
+
+<view class='myself_banner'>
+  <view class='myself_value'>
+    <view class='myself_head'><image src='{{}}' style='width:160rpx;height:160rpx;'></image></view><!-------获取头像------------->
+    <view class='myself_information'>
+      <view class='myself_text'>
+        <view class='myself_name color_000 fontsize_28'>{{name}}</view><!-------帐号昵称-------->
+        <!--------此处设置参数来控制按钮显示状态--------->
+        <view wx:if="{{join_display==0}}" class='myself_btn color_fff fontsize_18 border_radius_20' style='background-color:#fe8082'>已登录</view>
+        <view wx:if="{{join_display==1}}" class='myself_btn color_fff fontsize_18 border_radius_20' style='background-color:#fa3435' bindtap='findme'>登陆/注册</view>
+      </view>
+      <view class='changename_btn'>
+        <view class='change_information color_bfbfbf fontsize_18 border_radius ' bindtap=''>编辑资料</view><!---------bindtap未设置------------>
+      </view>
+      <view class='record'>
+        <view class='record_publish color_54c7f1 fontsize_28'>待取| {{waitingpickup_number}}</view>
+        <view class='record_complete color_54c7f1 fontsize_28'>待收| {{waitingshou_number}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class='feedback color_333 fontsize_28'>问题反馈</view>
+<view class='customer_service color_333 fontsize_28'>客服</view>
+<view class='help color_333 fontsize_28'>帮助</view>
+<view wx:if="{{join_display==0}}" class='quit_landing color_fff fontsize_28' bindtap='quit'>退出登陆</view>
+<view style=' height:5rpx;'></view>
+
+
+
+
+
+</view>

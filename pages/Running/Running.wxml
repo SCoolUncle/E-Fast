@@ -1,0 +1,147 @@
+<!--pages/Running/Running.wxml-->
+<view class='background_all'>
+
+<view wx:if="{{order_display==0}}" class='no_news'>
+  <view class='no_news_value'>
+    <view class='no_news_gif'>
+     <image src='../../images/running.gif' style="width: 420rpx; height: 270rpx;"></image>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{order_display>=1}}" class='news_tody_value'>
+    
+
+
+    <!---------时间提示按钮--------------->
+    <view wx:if="{{order_display>=1 && waiting_status==1}}" class='order_value_time color_bfbfbf fontsize_18'>{{now_time}}</view>
+
+    <view wx:if="{{order_display>=1 && waiting_status==1}}" class='inform_content_one border_radius border' bindtap='orderinformation'>
+      <view class='inform_value_head'>
+        <view class='inform_value_title fontsize_28 color_000'>订单信息</view>           
+        <view class='inform_value_time fontsize_18 color_fa3435'style='padding-left:40rpx;'>{{order_status}}</view>
+      </view>
+      <view class='order_value '>
+        <view class='order_user_image border_radius' style='background-image:url("{{user_head}}")'></view>  <!---------->
+        
+        <view class='order_value_value '>
+
+          <view class='order_user_iformation'>
+            <view class='order_user_name_phone fontsize_18 color_333'>{{user_name+"|"+user_phone}}</view>
+            <view class='order_user_payment'>
+              <view class='fontsize_18 color_333' style='float:left;'>预计支付：</view>
+              <view class='fontsize_18 color_fa3435' style='float:left;'>{{payment_amount}}</view>
+            </view>
+          </view>
+
+          <view class='order_user_iformation'>
+            <view class='order_user_name_phone fontsize_18 color_333'>·{{reLocations[reIndex]+"--"+deliveries[comIndex]}}</view>
+          </view>
+
+          <view class='order_user_iformation'>
+            <view class='order_user_name_phone fontsize_18 color_333'>·{{deadline}} 前</view>
+          </view>
+
+        </view>
+<!---------------------撤销按钮没有监听程序------------------------------------>
+        <view class='public_button'>
+          <view wx:if="{{user_identity==1}}" class='public_button_button border_radius fontsize_28 color_fa3435 'style='text-align:center;line-height:50rpx; '>{{button_value}}</view>
+          <view wx:if="{{user_identity==0}}" class='public_button_button border_radius fontsize_28 color_fff 'style='text-align:center;line-height:50rpx; background-color:{{bgcolor}}'>{{button_value}}</view>
+        </view>
+      </view>
+      <view class='order_details color_c7c7cc fontsize_16'>详细信息>></view>
+      
+    </view>
+
+
+
+     <!---------时间提示按钮--------------->
+    <view wx:if="{{order_display>=2 && waiting_status==1}}" class='order_value_time color_bfbfbf fontsize_18'>{{now_time}}</view>
+
+     <view wx:if="{{order_display>=2 && waiting_status==1}}" class='inform_content_one border_radius border' bindtap='orderinformation'>
+      <view class='inform_value_head'>
+        <view class='inform_value_title fontsize_28 color_000'>订单信息</view>           
+        <view class='inform_value_time fontsize_18 color_fa3435'style='padding-left:40rpx;'>{{order_status}}</view>
+      </view>
+      <view class='order_value '>
+        <view class='order_user_image border_radius' style='background-image:url("{{user_head}}")'></view>  <!---------->
+        
+        <view class='order_value_value '>
+
+          <view class='order_user_iformation'>
+            <view class='order_user_name_phone fontsize_18 color_333'>{{user_name+"|"+user_phone}}</view>
+            <view class='order_user_payment'>
+              <view class='fontsize_18 color_333' style='float:left;'>预计支付：</view>
+              <view class='fontsize_18 color_fa3435' style='float:left;'>{{payment_amount}}</view>
+            </view>
+          </view>
+
+          <view class='order_user_iformation'>
+            <view class='order_user_name_phone fontsize_18 color_333'>·{{reLocations[reIndex]+"--"+deliveries[comIndex]}}</view>
+          </view>
+
+          <view class='order_user_iformation'>
+            <view class='order_user_name_phone fontsize_18 color_333'>·{{deadline}} 前</view>
+          </view>
+
+        </view>
+<!---------------------撤销按钮没有监听程序------------------------------------>
+        <view class='public_button'>
+          <view wx:if="{{user_identity==1}}" class='public_button_button border_radius fontsize_28 color_fa3435 'style='text-align:center;line-height:50rpx; '>{{button_value}}</view>
+          <view wx:if="{{user_identity==0}}" class='public_button_button border_radius fontsize_28 color_fff 'style='text-align:center;line-height:50rpx; background-color:{{bgcolor}}'>{{button_value}}</view>
+        </view>
+      </view>
+      <view class='order_details color_c7c7cc fontsize_16'>详细信息>></view>
+      
+    </view>
+
+
+
+       <!---------时间提示按钮--------------->
+      <view wx:if="{{order_display>=3 && waiting_status==1}}" class='order_value_time color_bfbfbf fontsize_18'>{{now_time}}</view>
+
+     <view wx:if="{{order_display>=3 && waiting_status==1}}" class='inform_content_one border_radius border' bindtap='orderinformation'>
+      <view class='inform_value_head'>
+        <view class='inform_value_title fontsize_28 color_000'>订单信息</view>           
+        <view class='inform_value_time fontsize_18 color_fa3435'style='padding-left:40rpx;'>{{order_status}}</view>
+      </view>
+      <view class='order_value '>
+        <view class='order_user_image border_radius' style='background-image:url("{{user_head}}")'></view>  <!---------->
+        
+        <view class='order_value_value '>
+
+          <view class='order_user_iformation'>
+            <view class='order_user_name_phone fontsize_18 color_333'>{{user_name+"|"+user_phone}}</view>
+            <view class='order_user_payment'>
+              <view class='fontsize_18 color_333' style='float:left;'>预计支付：</view>
+              <view class='fontsize_18 color_fa3435' style='float:left;'>{{payment_amount}}</view>
+            </view>
+          </view>
+
+          <view class='order_user_iformation'>
+            <view class='order_user_name_phone fontsize_18 color_333'>·{{reLocations[reIndex]+"--"+deliveries[comIndex]}}</view>
+          </view>
+
+          <view class='order_user_iformation'>
+            <view class='order_user_name_phone fontsize_18 color_333'>·{{deadline}} 前</view>
+          </view>
+
+        </view>
+<!---------------------撤销按钮没有监听程序------------------------------------>
+        <view class='public_button'>
+          <view wx:if="{{user_identity==1}}" class='public_button_button border_radius fontsize_28 color_fa3435 'style='text-align:center;line-height:50rpx; '>{{button_value}}</view>
+          <view wx:if="{{user_identity==0}}" class='public_button_button border_radius fontsize_28 color_fff 'style='text-align:center;line-height:50rpx; background-color:{{bgcolor}}'>{{button_value}}</view>
+        </view>
+      </view>
+      <view class='order_details color_c7c7cc fontsize_16'>详细信息>></view>
+      
+    </view>
+
+    
+    
+    <view class='bottom_prompt fontsize_16 ' style='width:750rpx;height:20rpx  margin-bottom:10rpx;margin-top:10rpx;      text-align:center;color:#c7c7cc'>点击查看更多订单消息！</view>
+    
+  </view>
+
+</view>
+

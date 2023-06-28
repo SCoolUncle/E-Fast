@@ -1,0 +1,58 @@
+<!--pages/OrderInformation/OrderInformation.wxml-->
+<view class='background_all'>
+  <view class='State'>
+    <view class='state_text color_000 fontsize_28'>订单状态</view>
+    <view class='state_state color_fa3435 fontsize_28'>{{order_status}}</view>
+  </view>
+  
+  <view  class='main_box' bindtap='orderinformation'>
+      
+      <view class='order_value '>
+        <view class='order_user_image border_radius' style='background-image:url("{{user_head}}")'></view>  <!---------->
+        
+        <view class='order_value_value '>
+
+          <view class='order_user_iformation'>
+            <view class='order_user_name_phone fontsize_18 color_333'>{{user_name+"|"+user_phone}}</view>
+            <view class='order_user_payment'>
+              <view class='fontsize_18 color_333' style='float:left;'>预计支付：</view>
+              <view class='fontsize_18 color_fa3435' style='float:left;'>{{payment_amount}}</view>
+            </view>
+          </view>
+
+          <view class='order_user_iformation'>
+            <view class='order_user_name_phone fontsize_18 color_333'>·{{reLocations[reIndex]+"--"+deliveries[comIndex]}}</view>
+          </view>
+
+          <view class='order_user_iformation'>
+            <view class='order_user_name_phone fontsize_18 color_333'>·{{deadline}} 前</view>
+          </view>
+
+        </view>
+<!---------------------撤销按钮没有监听程序------------------------------------>
+        <view class='public_button'>
+          <view wx:if="{{user_identity==1}}" class='public_button_button border_radius fontsize_28 color_fa3435 'style='text-align:center;line-height:50rpx; '>{{button_value}}</view>
+          <view wx:if="{{user_identity==0}}" class='public_button_button border_radius fontsize_28 color_fff 'style='text-align:center;line-height:50rpx; background-color:{{bgcolor}}'>{{button_value}}</view>
+        </view>
+      </view>
+<!-------------------------------不知该服务的情况下---------------------------------------------->
+      <view wx:if="{{send_part==0}}" class='sendparts'>
+        <view class='sendparts_time color_000 fontsize_18'>配送时间：{{time}}</view>
+        <view class='sendparts_place color_000 fontsize_18'>配送地点：{{deLocations[deIndex]}}</view>
+      </view>
+    </view>
+    <view class='remarkes'>
+      <textarea class="remarkes_value fontsize_18" placeholder='备注信息' bindblur='changeNotes'/>
+    </view>
+    <view class='waiter_title color_000 fontsize_28'>代收人信息</view>
+    <view class='waiter_vule'>
+      <view class='waiter_name color_333 fontsize_18'>代收人姓名：{{}}</view><!----------------------->
+      <view class='waiter_name color_333 fontsize_18'>联系方式：{{}}</view><!------------------------->
+      <view class='waiter_name color_333 fontsize_18'>接单时间：{{}}</view><!----------------------->
+    </view>
+
+    <view wx:if="{{waiting_status==1}}" class='shouhuo_btn fontsize_28 color_fff'>确认收货</view>
+    <view class='ddddd' style='width:750rpx;height:100rpx;'></view>
+
+
+</view>

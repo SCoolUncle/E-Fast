@@ -1,0 +1,118 @@
+<!--pages/PickUpInformation/PickUpInformation.wxml-->
+<view class='background_all'>
+<view class='user_pickup_Requirement color_bfbfbf fontsize_28'>快递信息</view>
+      
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">最晚取件时间</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="time" start="08:00" end="20:00" value="{{deadline}}" bindchange="bindDeadlineChange">
+              <view class="weui-input">{{deadline}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">取件地点</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindReLocationChange" value="{{reIndex}}" range="{{reLocations}}">
+              <view class="weui-input">{{reLocations[reIndex]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">快递公司</view><!--------申通，百世，-------------------------->
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindDeliveryChange" value="{{comIndex}}" range="{{deliveries}}">
+              <view class="weui-input">{{deliveries[comIndex]}}</view>
+            </picker>
+          </view>
+        </view>
+        <!--------------------------快递信息备注------------------------------>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bdl">
+              <textarea class="weui-textarea" placeholder="备注信息" style="height: 3em" bindblur='changeNotes'/>
+              <view class="weui-textarea-counter">0/80</view>
+            </view>
+          </view>
+        </view>
+        <!------------------------------------------------------------------>
+
+      <view wx:if="{{send_part==0}}" class='send_service'><!-------------------------送件服务显示窗口------------------------------>
+      <view class="weui-cells__title" >送件信息</view>
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">送件时间</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="time" start="12:30" end="20:00" value="{{time}}" bindchange="bindTimeChange">
+              <view class="weui-input">{{time}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">送件地点</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindDeLocationChange" value="{{deIndex}}" range="{{deLocations}}">
+              <view class="weui-input">{{deLocations[deIndex]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">房间号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="weui-cell weui-cell_input">
+              <input class="weui-input" type="number" placeholder="201" bindblur='changeRoomNumber'/>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-------------------------送件信息备注------------------------------------>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bdl">
+            <textarea class="weui-textarea" placeholder="备注信息" style="height: 3em" bindblur='changeNotes'/>
+            <view class="weui-textarea-counter">0/80</view>
+          </view>
+        </view>
+      </view>
+      <!------------------------------------------------------------------------->
+      </view>
+      <!--------------------------------底部提交按钮----（需改动）------------------------------------------>
+     <view  class='submit_button color_fff fontsize_28' style='background-color:#30a5fd'>提交</view>
+     
+
+
+</view>
+</view>
+
+
+
+
+
+
